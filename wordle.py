@@ -4,12 +4,12 @@ import string
 from valid_words import valid_words
 from colorama import Fore, Style
 from random import choice
-
+# Colorama - allows use of colors, Requests - allows you to sent HTTP requests.
 print("""Guess the WORDLE in 6 tries. 
 Each guess must be a valid 5-letter word. Hit the enter key to submit.
 After each guess, the color of the tiles will change to show how close your
 guess was to the word.""")
-print("-" * 75)
+print("-" * 79)
 
 def play_wordle():
 
@@ -17,11 +17,8 @@ def play_wordle():
     print('\n')
 
     word = choice(valid_words).upper()
-
     guesses = 6
-
     letters = string.ascii_uppercase
-
     correct_letters = ''
     semi_correct_letters = ''
     wrong_letters = ''
@@ -30,7 +27,7 @@ def play_wordle():
         player_guess = input().upper()
         display = ''
         guessed_letters = ''
-
+# isalpha() - returns True if aall the characters are alphabet letters (a-z).
         if len(player_guess) != 5:
             print(Fore.RED + 'Enter a valid 5 letter word.' + Style.RESET_ALL)
             continue
